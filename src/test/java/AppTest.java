@@ -30,4 +30,10 @@ public class AppTest {
         Andriod andriod = new Andriod();
         assertEquals("<Android>Message : This is your message", andriod.call(mobileInputMsg));
     }
+
+    @Test
+    public void testGetBasicInformation() {
+        Mobile mobile = new Mobile("RongYao", "black", "HuaWei");
+        assertEquals("name: RongYao, color: black, brand: HuaWei", mobile.getBasicInformation());
+    }
 }

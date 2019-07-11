@@ -16,5 +16,8 @@ public class App {
         iPhone.call(mobileInputMsg);
         Andriod andriod = new Andriod();
         andriod.call(mobileInputMsg);
+
+        Mobile mobile = new Mobile("RongYao", "black", "HuaWei");
+        mobile.getBasicInformation();
     }
 }
