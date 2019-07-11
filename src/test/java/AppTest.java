@@ -30,4 +30,11 @@ public class AppTest {
         IPhoneRobot robot = new IPhoneRobot();
         assertEquals("<iPhone>Message : This is robot message", robot.call(new IPhone(),"This is robot message"));
     }
+
+    @Test
+    public void testChangedPhoneForPerson() {
+        Person person = new Person("Amiao", new Andriod());
+        person.setMobile(new IPhone());
+        assertEquals("<iPhone>Message : This is changed phone msg", person.call("This is changed phone msg"));
+    }
 }

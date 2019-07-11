@@ -12,6 +12,10 @@ public class Person {
     }
 
     public String call(String inputMsg) {
-        return mobile.call(inputMsg);
+        return this.mobile.call(inputMsg);
+    }
+
+    public void setMobile(Mobile mobile) {
+        this.mobile = mobile;
     }
 }

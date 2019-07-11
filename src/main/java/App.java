@@ -22,5 +22,9 @@ public class App {
 
         IPhoneRobot robot = new IPhoneRobot();
         robot.call(new IPhone(),"This is robot message");
+
+        Person person = new Person("Amiao", new Andriod());
+        person.setMobile(new IPhone());
+        person.call("This is changed phone msg");
     }
 }
