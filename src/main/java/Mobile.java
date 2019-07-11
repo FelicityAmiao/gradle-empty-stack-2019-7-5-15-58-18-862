@@ -1,6 +1,4 @@
-import java.util.Scanner;
-
-public class Mobile {
+public abstract class Mobile {
     private String name;
     private String color;
     private String brand;
@@ -26,5 +24,7 @@ public class Mobile {
         System.out.println(result);
         return result;
     }
+
+    public abstract boolean exceedsLength(String inputMsg);
 
 }

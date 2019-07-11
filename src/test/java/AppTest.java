@@ -14,26 +14,20 @@ public class AppTest {
     private String mobileInputMsg = "This is your message";
 
     @Test
-    public void testMobileCall() {
-        Mobile mobile = new Mobile();
-        assertEquals("Message : This is your message", mobile.call(mobileInputMsg));
+    public void testPersonCallByIPhone() {
+        Person person = new Person("Amiao", new IPhone());
+        assertEquals("<iPhone>Message : This is your message", person.call(mobileInputMsg));
     }
 
     @Test
-    public void testIPhoneCall() {
-        IPhone iPhone = new IPhone();
-        assertEquals("<iPhone>Message : This is your message", iPhone.call(mobileInputMsg));
+    public void testPersonCallByAndroid() {
+        Person person = new Person("Amiao", new Andriod());
+        assertEquals("<Andriod> Message cannot be sent", person.call(mobileInputMsg));
     }
 
     @Test
-    public void testAndroidCall() {
-        Andriod andriod = new Andriod();
-        assertEquals("<Android>Message : This is your message", andriod.call(mobileInputMsg));
-    }
-
-    @Test
-    public void testGetBasicInformation() {
-        Mobile mobile = new Mobile("RongYao", "black", "HuaWei");
-        assertEquals("name: RongYao, color: black, brand: HuaWei", mobile.getBasicInformation());
+    public void testIPhoneRobotCalls() {
+        IPhoneRobot robot = new IPhoneRobot();
+        assertEquals("<iPhone>Message : This is robot message", robot.call(new IPhone(),"This is robot message"));
     }
 }

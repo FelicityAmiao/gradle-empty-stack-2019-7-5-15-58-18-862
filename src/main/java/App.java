@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /*
@@ -9,15 +11,16 @@ public class App {
     }
 
     public static void main(String[] args) {
-        String mobileInputMsg = "This is your message";
-        Mobile m = new Mobile();
-        m.call(mobileInputMsg);
-        IPhone iPhone = new IPhone();
-        iPhone.call(mobileInputMsg);
-        Andriod andriod = new Andriod();
-        andriod.call(mobileInputMsg);
+        List<Mobile> mobiles = new ArrayList<Mobile>();
+        mobiles.add(new IPhone());
+        mobiles.add(new Andriod());
 
-        Mobile mobile = new Mobile("RongYao", "black", "HuaWei");
-        mobile.getBasicInformation();
+        for(Mobile mobile: mobiles) {
+            Person person = new Person("Amiao", mobile);
+            person.call("I'm " + person.getName());
+        }
+
+        IPhoneRobot robot = new IPhoneRobot();
+        robot.call(new IPhone(),"This is robot message");
     }
 }
